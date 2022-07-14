@@ -1,5 +1,5 @@
 # Takeout.js 
-[](https://img.shields.io/npm/v/takeout.js?style=for-the-badge)
+<img src="https://img.shields.io/npm/v/takeout.js?style=for-the-badge" />
 
 Takeout.js is super easy to use. In under 5 lines of code, you can send an email to anyone, anywhere. Ah, the joys of the internet. 
 
