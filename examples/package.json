@@ -1,0 +1,15 @@
+{
+    "name": "demo-takeout",
+    "version": "1.0.0",
+    "description": "an example to demo takeout.js",
+    "main": "index.js",
+    "scripts": {
+        "demo": "node index.js",
+        "file-demo": "node fromfile.js"
+    },
+    "author": "Sourfruit",
+    "license": "MIT",
+    "dependencies": {
+        "takeout.js": "^0.0.3"
+    }
+}

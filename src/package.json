@@ -8,7 +8,7 @@
     "license": "CC BY 4.0",
     "private": false,
     "scripts": {
-        "dev": "npm version patch && npm publish"
+        "dev": "npm version patch && npm publish && gitall"
     },
     "dependencies": {
         "html-minifier": "^4.0.0",
