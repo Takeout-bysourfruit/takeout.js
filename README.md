@@ -18,7 +18,7 @@ const TakeoutClient = require('takeout.js')
 const client = new TakeoutClient()
 ```
 
-You can also initalise a new TakeoutClient with 'debug' mode enabled via `new TakeoutClient(true)`. For now, it just prints success messages to the console. 
+You can also initialise a new TakeoutClient with 'debug' mode enabled via `new TakeoutClient(true)`. For now, it just prints success messages to the console. 
 
 ## Setup
 First, get your token from the [Takeout dashboard](https://takeout.bysourfruit.com/dashboard). You'll need it in a little bit.
@@ -64,7 +64,7 @@ client.send(emailTemplate)
 ```
 You can also use await for `client.send()` - where it'll return an email ID. This ID can be used to view your email in the browser (soon).
 
-Super simple. You can also import HTML directly from a file, using getHTMLFileContents(). 
+See? It's super simple. Oh, and you can also import HTML directly from a file, using getHTMLFileContents(). 
 This is demonstrated here: 
 ```js
 async function sendEmail() {
