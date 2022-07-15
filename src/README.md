@@ -1,5 +1,7 @@
-# Takeout.js 
+# Takeout.js 📨
 <img src="https://img.shields.io/npm/v/takeout.js?style=for-the-badge" />
+<img src="http://forthebadge.com/images/badges/made-with-javascript.svg" />
+<img src="http://forthebadge.com/images/badges/built-with-love.svg" />
 
 Takeout.js is super easy to use. In under 10 lines of code, you can send an email to anyone, anywhere. Ah, the joys of the internet. 
 
@@ -20,7 +22,7 @@ const client = new TakeoutClient()
 
 You can also initialise a new TakeoutClient with 'debug' mode enabled via `new TakeoutClient(true)`. For now, it just prints success messages to the console. 
 
-## Setup
+## Setup 🛠
 First, get your token from the [Takeout dashboard](https://takeout.bysourfruit.com/dashboard). You'll need it in a little bit.
 
 Then, using that token you just got, use it here: 
@@ -38,7 +40,7 @@ client.login('your token here')
 
 "But I want to actually send an email!" => we're getting there!  
 
-## Sending your first email
+## Sending your first email 📤
 
 Define a 'template' similar to this: 
 ```js
