@@ -5,7 +5,6 @@
 <p align='center'>
     <img display="inline-block" src="https://img.shields.io/npm/v/takeout.js?style=for-the-badge" /> <img display="inline-block"  src="https://img.shields.io/bundlephobia/minzip/takeout.js?style=for-the-badge" /> <img display="inline-block" src="https://img.shields.io/badge/Made%20with-love-red?style=for-the-badge" />
 </p>
-<br>
 <p align='center'>Takeout.js is super easy to use. In under 10 lines of code, you can send an email to anyone, anywhere. Ah, the joys of the internet.</p>
 
 ## Installation 
