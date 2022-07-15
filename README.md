@@ -7,7 +7,7 @@
 </p>
 <p align='center'>Takeout.js is super easy to use. In under 10 lines of code, you can send an email to anyone, anywhere. Ah, the joys of the internet.</p>
 
-## Installation 
+## Installation 🏗
 You can install Takeout.js using either NPM or Yarn. 
 ```shell
 $ npm install takeout.js
