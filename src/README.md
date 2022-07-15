@@ -1,11 +1,12 @@
-<center>
-    <img src="https://i.ibb.co/s9kq3V0/takeout.png" height="100px"/>
-    <h1 >Takeout.js 📨</h1>
-    <img src="https://img.shields.io/npm/v/takeout.js?style=for-the-badge" /> <img src="https://img.shields.io/bundlephobia/minzip/takeout.js?style=for-the-badge" /> <img src="https://img.shields.io/badge/Made%20with-love-red?style=for-the-badge" />
-    <br>
-</center>
 
-Takeout.js is super easy to use. In under 10 lines of code, you can send an email to anyone, anywhere. Ah, the joys of the internet. 
+<p align='center'><img src="https://i.ibb.co/s9kq3V0/takeout.png" height="150px"/></p>
+<h1 align='center'>Takeout.js</h1>
+
+<p align='center'>
+    <img display="inline-block" src="https://img.shields.io/npm/v/takeout.js?style=for-the-badge" /> <img display="inline-block"  src="https://img.shields.io/bundlephobia/minzip/takeout.js?style=for-the-badge" /> <img display="inline-block" src="https://img.shields.io/badge/Made%20with-love-red?style=for-the-badge" />
+</p>
+<br>
+<p align='center'>Takeout.js is super easy to use. In under 10 lines of code, you can send an email to anyone, anywhere. Ah, the joys of the internet.</p>
 
 ## Installation 
 You can install Takeout.js using either NPM or Yarn. 
