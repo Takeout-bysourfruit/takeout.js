@@ -1,9 +1,9 @@
 {
     "name": "takeout.js",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "description": "A Takeout client for Node.js",
     "main": "index.js",
-    "repository": "https://github.com/s0urfruit/takeout.js",
+    "repository": "https://github.com/Takeout-bysourfruit/takeout.js",
     "author": "Sourfruit <hello@def-not-hacking-the.net>",
     "license": "CC BY 4.0",
     "private": false,
