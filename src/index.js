@@ -88,7 +88,7 @@ class TakeoutClient {
             headers: { "Content-Type": "application/json" }
         })
         const response = await res.json()
-        if (!res.ok) throw new Error(`Takeout Login Error! ${res.status}`)
+        if (!res.ok) throw new Error(`Takeout Error! ${response['message-id']+ '\n\n'}`)
 
         if (res.ok) {
             if (this.debug === true) { console.log('Sent email successfully') }
