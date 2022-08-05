@@ -1,6 +1,6 @@
 {
     "name": "takeout.js",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "A Takeout client for Node.js",
     "main": "index.js",
     "repository": "https://github.com/Takeout-bysourfruit/takeout.js",
