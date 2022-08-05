@@ -1,4 +1,3 @@
-
 <p align='center'><img src="https://i.ibb.co/s9kq3V0/takeout.png" height="150px"/></p>
 <h1 align='center'>Takeout.js</h1>
 
@@ -36,7 +35,6 @@ As of right now, your code should look something like this:
 ```js
 const TakeoutClient = require('takeout.js')
 const client = new TakeoutClient()
-
 client.login('your token here')
 ```
 
@@ -71,20 +69,22 @@ You can also use await for `client.send()` - where it'll return an email ID. Thi
 See? It's super simple. Oh, and you can also import HTML directly from a file, using getHTMLFileContents(). 
 This is demonstrated here: 
 ```js
-async function sendEmail() {
+(async function () {
     const html = await client.getHTMLFileContents('templates/index.html')
-
     const emailTemplate = {
         to: 'test@example.com',
         from: 'Takeout.js', // as of July 2022, this will be (e.g) 'Takeout.js via Takeout' 
         subject: 'Getting HTML from a file',
         html: html, 
     }
-
     client.send(emailTemplate)
-}
-
-sendEmail()
+})();
 ```
+
+## Roadmap 🚦
+- Lodash templating built in, allowing you a greater variety of options in a single package (with... well some dependencies). 
+- Fixing SMTP email validation.
+- Bug fixes.
+- A lot more.
 
 ### See complete examples in [examples/](https://github.com/s0urfruit/takeout.js/tree/main/examples)
