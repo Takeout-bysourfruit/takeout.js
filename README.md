@@ -69,16 +69,20 @@ You can also use await for `client.send()` - where it'll return an email ID. Thi
 See? It's super simple. Oh, and you can also import HTML directly from a file, using getHTMLFileContents(). 
 This is demonstrated here: 
 ```js
-(async function () {
+async function sendEmail() {
     const html = await client.getHTMLFileContents('templates/index.html')
+
     const emailTemplate = {
         to: 'test@example.com',
         from: 'Takeout.js', // as of July 2022, this will be (e.g) 'Takeout.js via Takeout' 
         subject: 'Getting HTML from a file',
         html: html, 
     }
+
     client.send(emailTemplate)
-})();
+}
+
+sendEmail()
 ```
 
 ## Roadmap 🚦
