@@ -86,4 +86,10 @@ This is demonstrated here:
 
 ```
 
+## Roadmap 🚦
+- Lodash templating built in, allowing you a greater variety of options in a single package (with... well some dependencies). 
+- Fixing SMTP email validation.
+- Bug fixes.
+- A lot more.
+
 ### See complete examples in [examples/](https://github.com/s0urfruit/takeout.js/tree/main/examples)
