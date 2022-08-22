@@ -73,13 +73,13 @@ async function sendEmail() {
     const html = await client.getHTMLFileContents('templates/index.html')
 
     const emailTemplate = {
-        to: 'test@example.com',
-        from: 'Takeout.js', // as of July 2022, this will be (e.g) 'Takeout.js via Takeout' 
+        to: 'hello@sourfruit.xyz',
+        from: 'Takeout.js', // as of July 2022, this will be (e.g) 'Takeout.js via Takeout' for free users
         subject: 'Getting HTML from a file',
-        html: html, 
+        html: html,
     }
 
-    client.send(emailTemplate)
+    await client.send(emailTemplate)
 }
 
 sendEmail()
