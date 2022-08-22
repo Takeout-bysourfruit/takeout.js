@@ -73,7 +73,7 @@ class TakeoutClient {
     */
     async send(emailTemplate) {
         if (this.token == null || this.token.trim() === '') throw new Error(`Takeout Send Error! Token was either never provided, login failed, or something similar. Maybe try client.login('YOUR TOKEN')`)
-        if (emailTemplate.to === null || emailTemplate.from === null || emailTemplate.subject === null) throw new Error(`Takeout Send Error! One of the required fields to send an email was not fufilled. Check if your receiver, sender, and subject are defined and passed as an object.`)
+        if (emailTemplate.to === null || emailTemplate.from === null || emailTemplate.subject === null) throw new Error(`Takeout Send Error! One of the required fields to send an email was not fulfilled. Check if your receiver, sender, and subject are defined and passed as an object.`)
         // if (emailTemplate.from.includes(':') || emailTemplate.from.includes('@') || emailTemplate.from.includes('<') || emailTemplate.from.includes('>') || emailTemplate.from.includes(';')) throw new Error(`Takeout Send Error! Your 'from' contains forbidden charcacters. Make sure it doesn't include any of these: :<>@;`)
 
         const res = await fetch(`${this.baseUrl}/api/email/send`, {
