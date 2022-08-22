@@ -87,4 +87,4 @@ This is demonstrated here:
 - Bug fixes.
 - A lot more.
 
-### See complete examples in [examples/](https://github.com/s0urfruit/takeout.js/tree/main/examples)
+### See complete examples in [examples/](https://github.com/Takeout-bysourfruit/takeout.js/tree/main/examples)
