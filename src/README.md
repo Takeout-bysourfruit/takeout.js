@@ -91,8 +91,4 @@ sendEmail()
 - Bug fixes.
 - A lot more.
 
-<<<<<<< HEAD
 ### See complete examples in [examples/](https://github.com/Takeout-bysourfruit/takeout.js/tree/main/examples)
-=======
-### See complete examples in [examples/](https://github.com/Takeout-bysourfruit/takeout.js/tree/main/examples)
->>>>>>> 2b8308573ffaeef4fdad8cee2b8c886a5ed9202a
