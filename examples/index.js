@@ -8,10 +8,10 @@ client.login('token')
 // Define a "template" for your email
 const emailTemplate = {
     to: 'test@example.com',
-    from: 'Takeout.js', // as of July 2022, this will be (e.g) 'Takeout.js via Takeout' 
+    from: 'Takeout.js', // This will be (e.g) 'Takeout.js via Takeout' for free users
     subject: 'Your car\'s extended warranty has expired',
     text: 'If I define HTML, this won\'t be sent.',
-    html: "<html><body style='text-align: center'><h1>Test from NPM</h1><h2 style='color: red'>this should be in red</h2><img src='https://i.insider.com/5fa98250f7d1cb0019e3a908?width=1000&format=jpeg&auto=webp'/></body></html>", // or, use client.getHTMLFileContents()
+    html: "<html><body style='text-align: center'><h1>Test from JS</h1><h2 style='color: red'>this should be in red</h2><img src='https://i.insider.com/5fa98250f7d1cb0019e3a908?width=1000&format=jpeg&auto=webp'/></body></html>", // or, use client.getHTMLFileContents()
 }
 
 client.send(emailTemplate)

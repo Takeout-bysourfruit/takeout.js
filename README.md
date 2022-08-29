@@ -46,7 +46,7 @@ Define a 'template' similar to this:
 ```js
 const emailTemplate = {
     to: 'test@example.com',
-    from: 'Takeout.js', // as of July 2022, this will be (e.g) 'Takeout.js via Takeout' 
+    from: 'Takeout.js', // This will be (e.g) 'Takeout.js via Takeout' for free users
     subject: 'I just sent an email using Takeout!',
     html: "<b>My first email!</b>",
 }
@@ -55,7 +55,7 @@ or
 ```js
 const emailTemplate = {
     to: 'test@example.com',
-    from: 'Takeout.js', // as of July 2022, this will be (e.g) 'Takeout.js via Takeout' 
+    from: 'Takeout.js', // This will be (e.g) 'Takeout.js via Takeout' for free users
     subject: 'I just sent an email using Takeout!',
     text: 'My first email!',
 }
@@ -74,7 +74,7 @@ async function sendEmail() {
 
     const emailTemplate = {
         to: 'hello@sourfruit.xyz',
-        from: 'Takeout.js', // as of July 2022, this will be (e.g) 'Takeout.js via Takeout' for free users
+        from: 'Takeout.js', // This will be (e.g) 'Takeout.js via Takeout' for free users
         subject: 'Getting HTML from a file',
         html: html,
     }

@@ -12,7 +12,7 @@ async function sendEmail() {
     // Define a "template" for your email
     const emailTemplate = {
         to: 'test@example.com',
-        from: 'Takeout.js', // as of July 2022, this will be (e.g) 'Takeout.js via Takeout' 
+        from: 'Takeout.js', // This will be (e.g) 'Takeout.js via Takeout' for free users
         subject: 'Your car\'s extended warranty has expired',
         text: 'If I define HTML, this won\'t be sent.',
         html: html, // e.g: <b>hi, no .html file required</b>
