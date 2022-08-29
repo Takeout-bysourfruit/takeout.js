@@ -79,14 +79,14 @@ class TakeoutClient {
         const res = await fetch(`${this.baseUrl}/api/email/send`, {
             method: "POST",
             body: JSON.stringify({
-                token: this.token,
                 sender: emailTemplate.from.trim(),
                 receiver: emailTemplate.to.trim(),
                 subject: emailTemplate.subject.trim(),
+                cc: emailTemplate.cc,
                 bodyText: emailTemplate.text,
                 bodyHTML: emailTemplate.html
             }),
-            headers: { "Content-Type": "application/json" }
+            headers: { "Content-Type": "application/json", "Authorization": `Token ${this.token}`}
         })
         const response = await res.json()
         if (!res.ok) throw new Error(`Takeout Error! ${response['message-id']+ '\n\n'}`)
