@@ -84,6 +84,8 @@ async function sendEmail() {
 
 sendEmail()
 ```
+## Errors
+With the arrival of 1.2.0, came a new method to authenticate with Takeout's API. This removed your token from the request body and moved it to the Authorization header. If you're running an older version Takeout.js, Takeout will throw an error. Upgrade to a version >=1.2.0
 
 ## Roadmap 🚦
 - Lodash templating built in, allowing you a greater variety of options in a single package (with... well some dependencies). 
