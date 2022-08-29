@@ -18,8 +18,8 @@ async function sendEmail() {
         html: html, // e.g: <b>hi, no .html file required</b>
     }
 
-    // use await if you'd like to receive the email ID. 
-    client.send(emailTemplate)
+    // throw on a variable if you'd like to receive the email ID. 
+    await client.send(emailTemplate)
 }
 
 sendEmail()
