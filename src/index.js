@@ -79,10 +79,16 @@ class TakeoutClient {
         const res = await fetch(`${this.baseUrl}/api/email/send`, {
             method: "POST",
             body: JSON.stringify({
+                // Required
                 sender: emailTemplate.from.trim(),
                 receiver: emailTemplate.to.trim(),
                 subject: emailTemplate.subject.trim(),
+
+                // Not required, but requested by users
                 cc: emailTemplate.cc,
+                replyTo: emailTemplate.replyTo,
+
+                // Bodies
                 bodyText: emailTemplate.text,
                 bodyHTML: emailTemplate.html
             }),

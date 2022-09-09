@@ -85,6 +85,29 @@ async function sendEmail() {
 sendEmail()
 ```
 
+## Additional fields
+Takeout.js allows you to CC one person (a method to CC more is coming soon). Define this in your template. 
+```js
+const emailTemplate = {
+    to: 'test@example.com',
+    from: 'Takeout.js', // This will be (e.g) 'Takeout.js via Takeout' for free users
+    subject: 'I just sent an email using Takeout!',
+    text: 'My first email!',
+    cc: 'test@notexample.com'
+}
+```
+
+Furthermore, Takeout.js allows you to set a reply-to email. Define this in your template. 
+```js
+const emailTemplate = {
+    to: 'test@example.com',
+    from: 'Takeout.js', // This will be (e.g) 'Takeout.js via Takeout' for free users
+    subject: 'I just sent an email using Takeout!',
+    text: 'My first email!',
+    replyTo: 'reply@tome.com'
+}
+```
+
 ## Errors
 With the arrival of 1.2.0, came a new method to authenticate with Takeout's API. This removed your token from the request body and moved it to the Authorization header. If you're running an older version Takeout.js, Takeout will throw an error. Upgrade to a version >=1.2.0
 
