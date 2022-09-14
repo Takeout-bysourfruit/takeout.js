@@ -66,7 +66,7 @@ client.send(emailTemplate)
 ```
 You can also use await for `client.send()` - where it'll return an email ID. This ID can be used to view your email in the browser (soon).
 
-See? It's super simple. Oh, and you can also import HTML directly from a file, using getHTMLFileContents(). 
+See? It's super simple. Oh, and you can also import HTML directly from a file, using `getHTMLFileContents()`. 
 This is demonstrated here: 
 ```js
 async function sendEmail() {

@@ -69,7 +69,7 @@ class TakeoutClient {
         }
 
     * You'll receive an email-ID upon success. Eventually, you can use this ID to view the email in the browser, 
-    * at https://takeout.bysourfruit.com/preview/[id]. THIS IS NOT SUPPORTED- YET!
+    * at https://takeout.bysourfruit.com/preview/[id]. THIS IS SUPPORTED- NOW!
     */
     async send(emailTemplate) {
         if (this.token == null || this.token.trim() === '') throw new Error(`Takeout Send Error! Token was either never provided, login failed, or something similar. Maybe try client.login('YOUR TOKEN')`)
