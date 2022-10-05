@@ -38,7 +38,7 @@ const client = new TakeoutClient()
 client.login('your token here')
 ```
 
-"But I want to actually send an email!" => we're getting there!  
+"But I want to actually send an email!" ⇨ we're getting there!  
 
 ## Sending your first email 📤
 
