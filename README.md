@@ -108,6 +108,22 @@ const emailTemplate = {
 }
 ```
 
+## Takeout Cloud ☁️
+If you're a Takeout+ subscriber, you can upload email templates to Takeout Cloud via the [dashboard](https://takeout.bysourfruit.com/dashboard). You can upload up to 5 templates, each of which can be up to 5 megabytes in size.
+
+You can retrieve your template(s) using the package's built-in method, `getCloudTemplate()`. It'll only work after `client.login()`, and it expects the exact file name for your template.
+
+As an example, you'd use this code snippet of code to retrieve a template called `SomeRandomCloudTemplate.html`
+```js
+const html = await client.getCloudTemplate('SomeRandomCloudTemplate.html')
+```
+
+In the dashboard, after uploading the template, it'll look similar to this: 
+
+![](https://i.ibb.co/FzXgSRs/Screenshot-2022-10-09-at-3-37-33-pm.png)
+
+If you want to actually do something with the template, consider installing a package like [Lodash](https://www.npmjs.com/package/lodash) & their [_.template](https://docs-lodash.com/v4/template/) function.
+
 ## Errors
 With the arrival of 1.2.0, came a new method to authenticate with Takeout's API. This removed your token from the request body and moved it to the Authorization header. If you're running an older version Takeout.js, Takeout will throw an error. Upgrade to a version >=1.2.0
 

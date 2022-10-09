@@ -39,21 +39,44 @@ class TakeoutClient {
         if (res.ok) { if (this.debug == true) { console.log(response.message) } return { message: response.message, authenticated: true } }
     }
 
-
     /* Mini-docs: 
     *
-    * Use it anywhere. It expects a path to an html file.
+    * Use it anywhere. It expects a path, to a file.
+    * It returns a string,
     * An example is here: 
 
-        const html = await client.getHTMLFileContents('index.html')
+        const html = await client.getLocalTemplate('index.html')
 
     */
-    async getHTMLFileContents(file) {
-        if (typeof 'window' === 'undefined') throw new Error('Getting contents from HTML files is not supported in the browser.')
+    async getHTMLFileContents(file) { const backwardsCompatibility = await getLocalTemplate(file); return backwardsCompatibility }
+
+    async getLocalTemplate(file) {
+        if (typeof 'window' === 'undefined') throw new Error('Getting contents from files is not supported in the browser.')
         const fileContent = fs.readFileSync(file).toString()
         const mini = minify(fileContent, { html5: true, continueOnParseError: true });
         return mini
     }
+
+
+    /* Mini-docs: 
+    *
+    * Use getCloudTemplate anywhere. It expects the name of a template uploaded to Takeout Cloud.
+    * It also expects you to be logged in, so use it with async/await after client.login()
+    * It returns a string.
+    * An example is here: 
+
+        const html = await client.getCloudTemplate('SomeTemplateInTheCloud.html')
+
+    */
+
+    async getCloudTemplate(file) {
+        if (file === null) throw new Error("Takeout Cloud Template Error! A template name wasn't provided")
+        const res = await fetch(`https://takeout.deta.dev/cloud/read?name=${file}&token=${this.token}`)
+        if (!res.ok) throw new Error(`Takeout Cloud Template Error! ${res.status}`)
+        const response = await res.text()
+        return response
+    }
+
 
     /* Mini-docs: 
     *
@@ -92,10 +115,10 @@ class TakeoutClient {
                 bodyText: emailTemplate.text,
                 bodyHTML: emailTemplate.html
             }),
-            headers: { "Content-Type": "application/json", "Authorization": `Token ${this.token}`}
+            headers: { "Content-Type": "application/json", "Authorization": `Token ${this.token}` }
         })
         const response = await res.json()
-        if (!res.ok) throw new Error(`Takeout Error! ${response['message-id']+ '\n\n'}`)
+        if (!res.ok) throw new Error(`Takeout Error! ${response['message-id'] + '\n\n'}`)
 
         if (res.ok) {
             if (this.debug === true) { console.log('Sent email successfully') }
