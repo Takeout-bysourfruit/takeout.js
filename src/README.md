@@ -64,13 +64,13 @@ and then...
 ```js
 client.send(emailTemplate)
 ```
-You can also use await for `client.send()` - where it'll return an email ID. This ID can be used to view your email in the browser (soon).
+You can also use await for `client.send()` - where it'll return an email ID. This ID can be used to view your email in the browser.
 
-See? It's super simple. Oh, and you can also import HTML directly from a file, using `getHTMLFileContents()`. 
-This is demonstrated here: 
+See? It's super simple. Oh, and you can also import HTML/text directly from a file, using `getLocalTemplate()` (prev. `getHTMLFileContents()`). This is demonstrated here: 
+
 ```js
 async function sendEmail() {
-    const html = await client.getHTMLFileContents('templates/index.html')
+    const html = await client.getLocalTemplate('templates/index.html')
 
     const emailTemplate = {
         to: 'hello@sourfruit.xyz',
