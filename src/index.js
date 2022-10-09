@@ -71,7 +71,7 @@ class TakeoutClient {
 
     async getCloudTemplate(file) {
         if (file === null) throw new Error("Takeout Cloud Template Error! A template name wasn't provided")
-        const res = await fetch(`https://takeout.deta.dev/cloud/read?name=${file}&token=${this.token}`)
+        const res = await fetch(`https://cdn-takeout.bysourfruit.com/cloud/read?name=${file}&token=${this.token}`)
         if (!res.ok) throw new Error(`Takeout Cloud Template Error! ${res.status}`)
         const response = await res.text()
         return response
