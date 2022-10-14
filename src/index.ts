@@ -1,6 +1,7 @@
-const fetch = require('isomorphic-unfetch')
-const minify = require('html-minifier').minify;
-const fs = require('fs');
+import fetch from 'isomorphic-unfetch'
+import {minify} from 'html-minifier';
+import { readFileSync } from 'fs';
+
 
 /* 
 WELCOME TO THE DEPTHS OF HELL, SORRY, I MEANT THE SOURCE FOR TAKEOUT.JS 
@@ -10,6 +11,10 @@ fairly easy. At least when it comes to sending emails.
 */
 
 class TakeoutClient {
+    debug: boolean;
+    token: string;
+    baseUrl: string;
+
     constructor(debug = false) {
         this.debug = debug
         this.token = ''
@@ -25,7 +30,7 @@ class TakeoutClient {
 
     */
 
-    async login(token) {
+    async login(token: string): Promise<void|{message: string; authenticated: boolean}> {
         this.token = token
         const res = await fetch(`${this.baseUrl}/api/auth/verify`, {
             method: "POST",
@@ -48,11 +53,11 @@ class TakeoutClient {
         const html = await client.getLocalTemplate('index.html')
 
     */
-    async getHTMLFileContents(file) { const backwardsCompatibility = await getLocalTemplate(file); return backwardsCompatibility }
+    async getHTMLFileContents(file: string): Promise<string> { const backwardsCompatibility = await this.getLocalTemplate(file); return backwardsCompatibility }
 
-    async getLocalTemplate(file) {
+    async getLocalTemplate(file: string): Promise<string> {
         if (typeof 'window' === 'undefined') throw new Error('Getting contents from files is not supported in the browser.')
-        const fileContent = fs.readFileSync(file).toString()
+        const fileContent = readFileSync(file).toString()
         const mini = minify(fileContent, { html5: true, continueOnParseError: true });
         return mini
     }
@@ -69,7 +74,7 @@ class TakeoutClient {
 
     */
 
-    async getCloudTemplate(file) {
+    async getCloudTemplate(file: string): Promise<string> {
         if (file === null) throw new Error("Takeout Cloud Template Error! A template name wasn't provided")
         const res = await fetch(`https://cdn-takeout.bysourfruit.com/cloud/read?name=${file}&token=${this.token}`)
         if (!res.ok) throw new Error(`Takeout Cloud Template Error! ${res.status}`)
@@ -94,7 +99,15 @@ class TakeoutClient {
     * You'll receive an email-ID upon success. Eventually, you can use this ID to view the email in the browser, 
     * at https://takeout.bysourfruit.com/preview/[id]. THIS IS SUPPORTED- NOW!
     */
-    async send(emailTemplate) {
+    async send(emailTemplate: {
+        to: string,
+        from: string,
+        subject: string,
+        text?: string,
+        replyTo?: string,
+        cc?: string,
+        html?: string,
+    }): Promise<void|{id: string}> {
         if (this.token == null || this.token.trim() === '') throw new Error(`Takeout Send Error! Token was either never provided, login failed, or something similar. Maybe try client.login('YOUR TOKEN')`)
         if (emailTemplate.to === null || emailTemplate.from === null || emailTemplate.subject === null) throw new Error(`Takeout Send Error! One of the required fields to send an email was not fulfilled. Check if your receiver, sender, and subject are defined and passed as an object.`)
         // if (emailTemplate.from.includes(':') || emailTemplate.from.includes('@') || emailTemplate.from.includes('<') || emailTemplate.from.includes('>') || emailTemplate.from.includes(';')) throw new Error(`Takeout Send Error! Your 'from' contains forbidden charcacters. Make sure it doesn't include any of these: :<>@;`)
@@ -133,7 +146,7 @@ class TakeoutClient {
     * YOU CAN TRY USING IT VIA client.verifyEmail('test@test.com')
     * IT RELIES ON THE API. IF THE API CODE IS SCREWED, SO IS THIS BAREBONES FUNCTION!
     */
-    async verifyEmail(email) {
+    async verifyEmail(email: string): Promise<any> {
         if (email === null) throw new Error("Takeout Verify Error! An email wasn't provided")
         const res = await fetch(`${this.baseUrl}/api/email/verify`, {
             method: "POST",
