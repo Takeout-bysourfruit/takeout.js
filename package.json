@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "html-minifier": "^4.0.0",
+    "isomorphic-unfetch": "^3.1.0"
+  }
+}
